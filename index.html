@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NoirKit — 键盘优先的开发者工具台</title>
+  <meta name="description" content="JSON、JWT、Hash、时间戳、正则、Base64。本地运行，无后端，按 / 即可搜索。" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="top">
+    <a class="brand" href="./" aria-label="NoirKit">
+      <svg class="mark" viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
+        <rect x="3" y="3" width="26" height="26" rx="7" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 21V11l12 10V11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>NoirKit</span>
+    </a>
+    <button class="search-pill" id="openPalette" type="button">
+      <span>搜索工具</span>
+      <kbd>/</kbd>
+    </button>
+    <div class="top-actions">
+      <button id="themeBtn" class="ghost" type="button" title="切换主题">主题</button>
+      <a class="ghost" href="https://github.com/Anfyya/noirkit" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">本地 · 无后端 · 数据不出浏览器</p>
+      <h1>把常用开发动作收进一个键盘里。</h1>
+      <p class="lede">JSON 整理、JWT 拆包、Hash、时间戳、正则、Base64。按 <kbd>/</kbd> 搜索。</p>
+    </section>
+
+    <nav class="rail" id="rail" aria-label="工具列表"></nav>
+    <section class="stage" id="stage"></section>
+  </main>
+
+  <div class="palette" id="palette" hidden>
+    <div class="palette-card">
+      <input id="paletteInput" type="text" placeholder="输入工具名、英文或用途…" autocomplete="off" />
+      <ul id="paletteList"></ul>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
